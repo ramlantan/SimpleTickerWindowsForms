@@ -4,7 +4,6 @@ using System.Configuration;
 using System.IO;
 using System.ComponentModel;
 using System.Drawing;
-using System.Reflection;
 
 namespace SimpleTickerWindowsForms
 {

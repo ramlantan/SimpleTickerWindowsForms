@@ -1,12 +1,14 @@
 # SimpleTicker
-**This project is old, busted, and abandoned. A new ticker based on WPF is currently being developed.** 
-*please look forward to it*
+### A simple (looking) crypto asset ticker for Windows.
 
-A simple (looking) crypto asset ticker for Windows.
+**This project is terrible and probably won't be updated, but should probably work. A new ticker based on WPF is being made.**
+
+*please look forward to it*
 
 Download the latest release here:
 https://github.com/ramlantan/SimpleTickerWindowsForms/releases
-Cross-platform versions may be made in the future.
+
+Cross-platform versions might be made in the future.
 
 ## Instructions
 By default, the ticker will ignore clicks and no interaction is allowed.

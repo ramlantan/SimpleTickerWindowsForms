@@ -292,6 +292,7 @@ namespace SimpleTickerWindowsForms
         // Rate of scrolling
         private void ScrollingTimer_Tick(object sender, EventArgs e)
         {
+            // The cloned ticker panel will trail behind the initial panel, or vis versa, to create a looping/scrolling effect
             if (tickerPanel.Left < tickerPanelClone.Left)
             {
                 tickerPanel.Left--;
@@ -476,22 +477,15 @@ namespace SimpleTickerWindowsForms
             }
             catch
             {
+                // Else return an erroneous price
                 return -1f;
-                //Do nothing
             }
         }
 
         // Right click menu "Close"
-        // Close application thoughtfully
         private void RightClickClose(object sender, EventArgs e)
         {
-            if (Application.MessageLoop) {
-                // WinForms app
-                Application.Exit();
-            } else {
-                // Console app
-                Environment.Exit(1);
-            }
+            Application.Exit();
         }
 
         // Right click menu "Settings"

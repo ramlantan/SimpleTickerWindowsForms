@@ -66,12 +66,7 @@
             this.grpStyle = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Basic = new System.Windows.Forms.TabPage();
-            this.Appearance = new System.Windows.Forms.TabPage();
-            this.lblTickerFormatInstructions = new System.Windows.Forms.Label();
-            this.lblRows = new System.Windows.Forms.Label();
-            this.txtRows = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtCurrencySymbol = new System.Windows.Forms.TextBox();
             this.lblCurrency = new System.Windows.Forms.Label();
             this.numRefreshInterval = new System.Windows.Forms.NumericUpDown();
@@ -80,7 +75,13 @@
             this.lblCurrencySymbol = new System.Windows.Forms.Label();
             this.lblMinutes = new System.Windows.Forms.Label();
             this.lblRefreshInterval = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.lblTickerFormatInstructions = new System.Windows.Forms.Label();
+            this.lblRows = new System.Windows.Forms.Label();
+            this.txtRows = new System.Windows.Forms.TextBox();
+            this.Appearance = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
             this.grpAlignment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBorderBuffer)).BeginInit();
@@ -90,8 +91,8 @@
             this.grpStyle.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.Basic.SuspendLayout();
-            this.Appearance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numRefreshInterval)).BeginInit();
+            this.Appearance.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSettingsOK
@@ -471,6 +472,7 @@
             // 
             // Basic
             // 
+            this.Basic.Controls.Add(this.label2);
             this.Basic.Controls.Add(this.label1);
             this.Basic.Controls.Add(this.txtCurrencySymbol);
             this.Basic.Controls.Add(this.lblCurrency);
@@ -494,27 +496,124 @@
             this.Basic.Text = "Basic";
             this.Basic.UseVisualStyleBackColor = true;
             // 
-            // Appearance
+            // label1
             // 
-            this.Appearance.Controls.Add(this.btnSettingsOK);
-            this.Appearance.Controls.Add(this.grpStyle);
-            this.Appearance.Controls.Add(this.btnSettingsCancel);
-            this.Appearance.Controls.Add(this.grpBuffers);
-            this.Appearance.Controls.Add(this.grpAlignment);
-            this.Appearance.Controls.Add(this.chkAlwaysOnTop);
-            this.Appearance.Controls.Add(this.lblScreenLocation);
-            this.Appearance.Controls.Add(this.txtScreenLocationX);
-            this.Appearance.Controls.Add(this.txtScreenLocationY);
-            this.Appearance.Controls.Add(this.lblX);
-            this.Appearance.Controls.Add(this.lblY);
-            this.Appearance.Location = new System.Drawing.Point(4, 25);
-            this.Appearance.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.Appearance.Name = "Appearance";
-            this.Appearance.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.Appearance.Size = new System.Drawing.Size(803, 328);
-            this.Appearance.TabIndex = 1;
-            this.Appearance.Text = "Appearance";
-            this.Appearance.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 144);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(139, 16);
+            this.label1.TabIndex = 63;
+            this.label1.Text = "One ticker row per line";
+            // 
+            // txtCurrencySymbol
+            // 
+            this.txtCurrencySymbol.Location = new System.Drawing.Point(250, 10);
+            this.txtCurrencySymbol.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtCurrencySymbol.Name = "txtCurrencySymbol";
+            this.txtCurrencySymbol.Size = new System.Drawing.Size(44, 22);
+            this.txtCurrencySymbol.TabIndex = 59;
+            this.txtCurrencySymbol.Text = "$";
+            // 
+            // lblCurrency
+            // 
+            this.lblCurrency.AutoSize = true;
+            this.lblCurrency.Location = new System.Drawing.Point(6, 13);
+            this.lblCurrency.Name = "lblCurrency";
+            this.lblCurrency.Size = new System.Drawing.Size(61, 16);
+            this.lblCurrency.TabIndex = 55;
+            this.lblCurrency.Text = "Currency";
+            // 
+            // numRefreshInterval
+            // 
+            this.numRefreshInterval.Location = new System.Drawing.Point(101, 63);
+            this.numRefreshInterval.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.numRefreshInterval.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.numRefreshInterval.Name = "numRefreshInterval";
+            this.numRefreshInterval.Size = new System.Drawing.Size(59, 22);
+            this.numRefreshInterval.TabIndex = 62;
+            this.numRefreshInterval.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // txtCurrency
+            // 
+            this.txtCurrency.Location = new System.Drawing.Point(73, 10);
+            this.txtCurrency.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtCurrency.Name = "txtCurrency";
+            this.txtCurrency.Size = new System.Drawing.Size(55, 22);
+            this.txtCurrency.TabIndex = 56;
+            this.txtCurrency.Text = "USD";
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.Ivory;
+            this.linkLabel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.linkLabel1.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
+            this.linkLabel1.Location = new System.Drawing.Point(300, 5);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Padding = new System.Windows.Forms.Padding(5);
+            this.linkLabel1.Size = new System.Drawing.Size(462, 44);
+            this.linkLabel1.TabIndex = 57;
+            this.linkLabel1.Text = "See https://coinmarketcap.com/api/ for valid currencies.\r\nBTC and ETH are also va" +
+    "lid currencies, for displaying price in sats or gwei.";
+            // 
+            // lblCurrencySymbol
+            // 
+            this.lblCurrencySymbol.AutoSize = true;
+            this.lblCurrencySymbol.Location = new System.Drawing.Point(134, 13);
+            this.lblCurrencySymbol.Name = "lblCurrencySymbol";
+            this.lblCurrencySymbol.Size = new System.Drawing.Size(110, 16);
+            this.lblCurrencySymbol.TabIndex = 58;
+            this.lblCurrencySymbol.Text = "Currency Symbol";
+            // 
+            // lblMinutes
+            // 
+            this.lblMinutes.AutoSize = true;
+            this.lblMinutes.Location = new System.Drawing.Point(166, 65);
+            this.lblMinutes.Name = "lblMinutes";
+            this.lblMinutes.Size = new System.Drawing.Size(54, 16);
+            this.lblMinutes.TabIndex = 61;
+            this.lblMinutes.Text = "minutes";
+            // 
+            // lblRefreshInterval
+            // 
+            this.lblRefreshInterval.AutoSize = true;
+            this.lblRefreshInterval.Location = new System.Drawing.Point(6, 65);
+            this.lblRefreshInterval.Name = "lblRefreshInterval";
+            this.lblRefreshInterval.Size = new System.Drawing.Size(87, 16);
+            this.lblRefreshInterval.TabIndex = 60;
+            this.lblRefreshInterval.Text = "Refresh Rate";
+            // 
+            // button1
+            // 
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.button1.Location = new System.Drawing.Point(593, 296);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(99, 27);
+            this.button1.TabIndex = 53;
+            this.button1.Text = "OK";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.BtnSettingsOK_Click);
+            // 
+            // button2
+            // 
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button2.Location = new System.Drawing.Point(698, 296);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(99, 27);
+            this.button2.TabIndex = 54;
+            this.button2.Text = "Cancel";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.BtnSettingsCancel_Click);
             // 
             // lblTickerFormatInstructions
             // 
@@ -550,124 +649,36 @@
             this.txtRows.Text = "bitcoin=BTC,ethereum=ETH\r\nLitecoin,NEO,bitcoin-cash=bcash";
             this.txtRows.WordWrap = false;
             // 
-            // button1
+            // Appearance
             // 
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Location = new System.Drawing.Point(593, 296);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 27);
-            this.button1.TabIndex = 53;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.BtnSettingsOK_Click);
+            this.Appearance.Controls.Add(this.btnSettingsOK);
+            this.Appearance.Controls.Add(this.grpStyle);
+            this.Appearance.Controls.Add(this.btnSettingsCancel);
+            this.Appearance.Controls.Add(this.grpBuffers);
+            this.Appearance.Controls.Add(this.grpAlignment);
+            this.Appearance.Controls.Add(this.chkAlwaysOnTop);
+            this.Appearance.Controls.Add(this.lblScreenLocation);
+            this.Appearance.Controls.Add(this.txtScreenLocationX);
+            this.Appearance.Controls.Add(this.txtScreenLocationY);
+            this.Appearance.Controls.Add(this.lblX);
+            this.Appearance.Controls.Add(this.lblY);
+            this.Appearance.Location = new System.Drawing.Point(4, 25);
+            this.Appearance.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.Appearance.Name = "Appearance";
+            this.Appearance.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.Appearance.Size = new System.Drawing.Size(803, 328);
+            this.Appearance.TabIndex = 1;
+            this.Appearance.Text = "Appearance";
+            this.Appearance.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // label2
             // 
-            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(698, 296);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(99, 27);
-            this.button2.TabIndex = 54;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.BtnSettingsCancel_Click);
-            // 
-            // txtCurrencySymbol
-            // 
-            this.txtCurrencySymbol.Location = new System.Drawing.Point(250, 2);
-            this.txtCurrencySymbol.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtCurrencySymbol.Name = "txtCurrencySymbol";
-            this.txtCurrencySymbol.Size = new System.Drawing.Size(44, 22);
-            this.txtCurrencySymbol.TabIndex = 59;
-            this.txtCurrencySymbol.Text = "$";
-            // 
-            // lblCurrency
-            // 
-            this.lblCurrency.AutoSize = true;
-            this.lblCurrency.Location = new System.Drawing.Point(6, 5);
-            this.lblCurrency.Name = "lblCurrency";
-            this.lblCurrency.Size = new System.Drawing.Size(61, 16);
-            this.lblCurrency.TabIndex = 55;
-            this.lblCurrency.Text = "Currency";
-            // 
-            // numRefreshInterval
-            // 
-            this.numRefreshInterval.Location = new System.Drawing.Point(101, 47);
-            this.numRefreshInterval.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.numRefreshInterval.Minimum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.numRefreshInterval.Name = "numRefreshInterval";
-            this.numRefreshInterval.Size = new System.Drawing.Size(59, 22);
-            this.numRefreshInterval.TabIndex = 62;
-            this.numRefreshInterval.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            // 
-            // txtCurrency
-            // 
-            this.txtCurrency.Location = new System.Drawing.Point(73, 2);
-            this.txtCurrency.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtCurrency.Name = "txtCurrency";
-            this.txtCurrency.Size = new System.Drawing.Size(55, 22);
-            this.txtCurrency.TabIndex = 56;
-            this.txtCurrency.Text = "USD";
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.BackColor = System.Drawing.Color.Ivory;
-            this.linkLabel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.linkLabel1.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.linkLabel1.Location = new System.Drawing.Point(300, 5);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Padding = new System.Windows.Forms.Padding(5);
-            this.linkLabel1.Size = new System.Drawing.Size(462, 44);
-            this.linkLabel1.TabIndex = 57;
-            this.linkLabel1.Text = "See https://coinmarketcap.com/api/ for valid currencies.\r\nBTC and ETH are also va" +
-    "lid currencies, for displaying price in sats or gwei.";
-            // 
-            // lblCurrencySymbol
-            // 
-            this.lblCurrencySymbol.AutoSize = true;
-            this.lblCurrencySymbol.Location = new System.Drawing.Point(134, 5);
-            this.lblCurrencySymbol.Name = "lblCurrencySymbol";
-            this.lblCurrencySymbol.Size = new System.Drawing.Size(110, 16);
-            this.lblCurrencySymbol.TabIndex = 58;
-            this.lblCurrencySymbol.Text = "Currency Symbol";
-            // 
-            // lblMinutes
-            // 
-            this.lblMinutes.AutoSize = true;
-            this.lblMinutes.Location = new System.Drawing.Point(166, 49);
-            this.lblMinutes.Name = "lblMinutes";
-            this.lblMinutes.Size = new System.Drawing.Size(54, 16);
-            this.lblMinutes.TabIndex = 61;
-            this.lblMinutes.Text = "minutes";
-            // 
-            // lblRefreshInterval
-            // 
-            this.lblRefreshInterval.AutoSize = true;
-            this.lblRefreshInterval.Location = new System.Drawing.Point(8, 49);
-            this.lblRefreshInterval.Name = "lblRefreshInterval";
-            this.lblRefreshInterval.Size = new System.Drawing.Size(87, 16);
-            this.lblRefreshInterval.TabIndex = 60;
-            this.lblRefreshInterval.Text = "Refresh Rate";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 144);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 16);
-            this.label1.TabIndex = 63;
-            this.label1.Text = "One ticker row per line";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(98, 90);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(203, 16);
+            this.label2.TabIndex = 64;
+            this.label2.Text = "Minimum refresh rate is 5 minutes";
             // 
             // SettingsForm
             // 
@@ -699,9 +710,9 @@
             this.tabControl1.ResumeLayout(false);
             this.Basic.ResumeLayout(false);
             this.Basic.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numRefreshInterval)).EndInit();
             this.Appearance.ResumeLayout(false);
             this.Appearance.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numRefreshInterval)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -760,5 +771,6 @@
         private System.Windows.Forms.TextBox txtRows;
         private System.Windows.Forms.TabPage Appearance;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

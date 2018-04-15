@@ -127,7 +127,7 @@
     <value>315, 17</value>
   </metadata>
   <data name="lblTickerFormatInstructions.Text" xml:space="preserve">
-    <value>Add coins in the following format: Coin1,Coin2,Coin3,[...]
+    <value>Add any coins on CMC in the following format: Coin1,Coin2,Coin3,[...]
 Or, add custom labels in this format: Coin1=Name1,Coin2=Name2,[...] 
 
 Coin1 etc should match that coin's CoinMarketCap URL, for example;
