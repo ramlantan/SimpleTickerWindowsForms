@@ -69,7 +69,6 @@ namespace SimpleTickerWindowsForms
             if (result == DialogResult.OK)
             {
                 btnTickerBackgroundColor.BackColor = colorTickerBackground.Color;
-                trackBackgroundColorTransparency.Value = 0;
             }
         }
 
@@ -82,7 +81,6 @@ namespace SimpleTickerWindowsForms
             if (result == DialogResult.OK)
             {
                 btnTickerFontColor.BackColor = colorTickerFont.Color;
-                trackFontColorTransparency.Value = 0;
             }
         }
 
@@ -122,12 +120,10 @@ namespace SimpleTickerWindowsForms
                 if (ConfigurationManager.AppSettings["tickerbackgroundcolor"] != "")
                 {
                     btnTickerBackgroundColor.BackColor = Color.FromArgb(Convert.ToInt32(ConfigurationManager.AppSettings["tickerbackgroundcolor"]));
-                    trackBackgroundColorTransparency.Value = trackBackgroundColorTransparency.Maximum - Convert.ToInt32(btnTickerBackgroundColor.BackColor.A.ToString());
                 }
                 if (ConfigurationManager.AppSettings["tickerfontcolor"] != "")
                 {
                     btnTickerFontColor.BackColor = Color.FromArgb(Convert.ToInt32(ConfigurationManager.AppSettings["tickerfontcolor"]));
-                    trackFontColorTransparency.Value = trackFontColorTransparency.Maximum - Convert.ToInt32(btnTickerFontColor.BackColor.A.ToString());
                 }
 
                 if (ConfigurationManager.AppSettings["scrollingmode"] != "")
@@ -173,8 +169,6 @@ namespace SimpleTickerWindowsForms
 
                 Config.AppSettings.Settings["width"].Value = numWidth.Value.ToString();
 
-                btnTickerBackgroundColor.BackColor = Color.FromArgb(trackBackgroundColorTransparency.Maximum - trackBackgroundColorTransparency.Value, btnTickerBackgroundColor.BackColor);
-                btnTickerFontColor.BackColor = Color.FromArgb(trackFontColorTransparency.Maximum - trackFontColorTransparency.Value, btnTickerFontColor.BackColor);
                 Config.AppSettings.Settings["tickerbackgroundcolor"].Value = btnTickerBackgroundColor.BackColor.ToArgb().ToString();
                 Config.AppSettings.Settings["tickerfontcolor"].Value = btnTickerFontColor.BackColor.ToArgb().ToString();
 
@@ -197,16 +191,6 @@ namespace SimpleTickerWindowsForms
             lblWidth.Enabled = chkScrollingMode.Checked;
             lblPx4.Enabled = chkScrollingMode.Checked;
             numWidth.Enabled = chkScrollingMode.Checked;
-        }
-
-        private void TrackBackgroundColorTransparency_Scroll(object sender, EventArgs e)
-        {
-            btnTickerBackgroundColor.BackColor = Color.FromArgb(trackBackgroundColorTransparency.Maximum - trackBackgroundColorTransparency.Value, btnTickerBackgroundColor.BackColor);
-        }
-
-        private void TrackFontColorTransparency_Scroll(object sender, EventArgs e)
-        {
-            btnTickerFontColor.BackColor = Color.FromArgb(trackFontColorTransparency.Maximum - trackFontColorTransparency.Value, btnTickerFontColor.BackColor);
         }
 
         private void RadFreeForm_CheckedChanged(object sender, EventArgs e)

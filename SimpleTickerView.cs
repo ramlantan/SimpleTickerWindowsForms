@@ -334,9 +334,9 @@ namespace SimpleTickerWindowsForms
                     if (ScrollingMode && FreeFormMode) currentTickerClone = tickerPanelClone.Controls["tickerclone" + tickerrow + tickerindex] as Label;
 
                     // Set customlabel to users custom label, or if none is present default to the CMC symbol
-                    if (Tickers[tickerrow][tickerindex].Contains(";"))
+                    if (Tickers[tickerrow][tickerindex].Contains("="))
                     {
-                        customlabel = Tickers[tickerrow][tickerindex].Split(';')[1];
+                        customlabel = Tickers[tickerrow][tickerindex].Split('=')[1];
                     }
                     else
                     {
@@ -344,7 +344,7 @@ namespace SimpleTickerWindowsForms
                     }
 
                     // Split out custom name from CMC symbol and pass to API request in the wanted currency
-                    price = PollAPI(Tickers[tickerrow][tickerindex].Split(';')[0], Currency);
+                    price = PollAPI(Tickers[tickerrow][tickerindex].Split('=')[0], Currency);
                     
                     // Format numbers based on some essentially random criteria
                     if (Currency.ToUpper() == "BTC" || Currency.ToUpper() == "ETH") {
