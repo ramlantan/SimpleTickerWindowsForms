@@ -297,26 +297,29 @@ namespace SimpleTickerWindowsForms
         // Rate of scrolling
         private void ScrollingTimer_Tick(object sender, EventArgs e)
         {
-            // The cloned ticker panel will trail behind the initial panel, or vis versa, to create a looping/scrolling effect
-            if (tickerPanel.Left < tickerPanelClone.Left)
+            if (!firstrun)
             {
-                tickerPanel.Left--;
-                tickerPanelClone.Left = tickerPanel.Left + tickerPanelClone.Width + TickerBuffer;
-
-                if (tickerPanel.Left < -tickerPanel.Width)
+                // The cloned ticker panel will trail behind the initial panel, or vis versa, to create a looping/scrolling effect
+                if (tickerPanel.Left < tickerPanelClone.Left)
                 {
-                    tickerPanel.Left = tickerPanelClone.Left + tickerPanelClone.Width;
+                    tickerPanel.Left--;
+                    tickerPanelClone.Left = tickerPanel.Left + tickerPanelClone.Width + TickerBuffer;
+
+                    if (tickerPanel.Left < -tickerPanel.Width)
+                    {
+                        tickerPanel.Left = tickerPanelClone.Left + tickerPanelClone.Width;
+                    }
                 }
-            }
 
-            if (tickerPanel.Left > tickerPanelClone.Left)
-            {
-                tickerPanelClone.Left--;
-                tickerPanel.Left = tickerPanelClone.Left + tickerPanelClone.Width + TickerBuffer;
-
-                if (tickerPanelClone.Left < -tickerPanelClone.Width)
+                if (tickerPanel.Left > tickerPanelClone.Left)
                 {
-                    tickerPanelClone.Left = tickerPanel.Left + tickerPanel.Width;
+                    tickerPanelClone.Left--;
+                    tickerPanel.Left = tickerPanelClone.Left + tickerPanelClone.Width + TickerBuffer;
+
+                    if (tickerPanelClone.Left < -tickerPanelClone.Width)
+                    {
+                        tickerPanelClone.Left = tickerPanel.Left + tickerPanel.Width;
+                    }
                 }
             }
         }
@@ -371,10 +374,10 @@ namespace SimpleTickerWindowsForms
                     if (firstrun && tickerrow == 0 && tickerindex == 0) 
                     {
                         currentTicker = tickerPanel.Controls["ticker00"] as Label;
-                        currentTicker.Text = "Control + click to move. Control + right click for settings.";
+                        currentTicker.Text = "Control + right-click for settings.";
                     }
                     // Display blanks in the remainder of tickers if first run
-                    else if (firstrun) {
+                    else if (firstrun && tickerrow != 0 && tickerindex != 0) {
                         currentTicker.Text = "";
                     }
                     // Else normal label updating
