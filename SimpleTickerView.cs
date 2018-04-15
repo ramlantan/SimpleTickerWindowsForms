@@ -38,6 +38,7 @@ namespace SimpleTickerWindowsForms
         private SettingsForm settingsForm;
         private Configuration configFile = null;
         private GlobalKeyboardHook gkh;
+        private bool firstrun = true;
 
         public List<List<string>> Tickers { get; set; }
         public Point TickerLocation { get; set; } = new Point(0, 0);
@@ -96,7 +97,6 @@ namespace SimpleTickerWindowsForms
 
             // Initialize all the thing
             PullTheLeverKronk();
-            
         }
 
         // Main ticker refresh function
@@ -287,6 +287,11 @@ namespace SimpleTickerWindowsForms
             // Set form to display topmost every timer refresh, a workaround for forcing the ticker to always display above the taskbar...
             // Also do not set TopMost while settings form is open
             if (AlwaysOnTop == true && settingsForm == null) TopMost = true;
+            if (firstrun)
+            {
+                firstrun = false;
+                PullTheLeverKronk();
+            }
         }
 
         // Rate of scrolling
@@ -362,9 +367,22 @@ namespace SimpleTickerWindowsForms
                         pricedecimals = "N2";
                     }
 
-                    // Final label output
-                    currentTicker.Text = customlabel + " " + CurrencySymbol + price.ToString(pricedecimals);
-                    if (ScrollingMode && FreeFormMode) currentTickerClone.Text = customlabel + " " + CurrencySymbol + price.ToString(pricedecimals);
+                    // If first run and first ticker, display message
+                    if (firstrun && tickerrow == 0 && tickerindex == 0) 
+                    {
+                        currentTicker = tickerPanel.Controls["ticker00"] as Label;
+                        currentTicker.Text = "Control + click to move. Control + right click for settings.";
+                    }
+                    // Display blanks in the remainder of tickers if first run
+                    else if (firstrun) {
+                        currentTicker.Text = "";
+                    }
+                    // Else normal label updating
+                    else
+                    {
+                        currentTicker.Text = customlabel + " " + CurrencySymbol + price.ToString(pricedecimals);
+                        if (ScrollingMode && FreeFormMode) currentTickerClone.Text = customlabel + " " + CurrencySymbol + price.ToString(pricedecimals);
+                    }
                 }
             }
         }
