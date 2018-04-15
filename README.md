@@ -1,5 +1,6 @@
 # SimpleTicker
 **This project is old, busted, and abandoned. A new ticker based on WPF is currently being developed.** *soon™*
+
 A simple™ crypto asset ticker
 
 # Instructions
