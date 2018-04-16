@@ -21,6 +21,6 @@ Anti-virus may flag this due to using a global keyboard hook, which is used for 
 If a ticker displays "$-1", try confirming the URL of the coin on CoinMarketCap's website. 
 https://coinmarketcap.com/
 
-##Compiling source
+## Compiling source
 You can compile the source yourself by downloading the free Community version of Visual Studio 2017 here: 
 https://www.visualstudio.com/downloads/
