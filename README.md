@@ -1,5 +1,6 @@
 # SimpleTicker
 ### A simple (looking) cryptocurrency asset ticker for Windows.
+![Image of SimpleTicker](https://raw.githubusercontent.com/ramlantan/SimpleTickerWindowsForms/master/screenshot.png)
 
 **This project is terrible and probably won't be updated, but should probably work. A new ticker based on WPF is being made.**\
 *please look forward to it*
